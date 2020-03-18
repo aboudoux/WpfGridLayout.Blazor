@@ -1,0 +1,39 @@
+﻿<CascadingValue Value="this">
+    @ColumnDefinitions
+    @RowDefinitions
+    
+    <div style="@_wrapper.Css @_wrapper.RowGap(RowGap) @_wrapper.ColumnGap(ColumnGap)">
+        @Content
+    </div>
+</CascadingValue>
+
+    @code {
+        [Parameter]
+        public RenderFragment ColumnDefinitions { get; set; }
+
+        [Parameter]
+        public RenderFragment RowDefinitions { get; set; }
+
+        [Parameter]
+        public RenderFragment Content { get; set; }
+
+        [Parameter]
+        public int ColumnGap { get; set; } = 0;
+
+        [Parameter]
+        public int RowGap { get; set; } = 0;
+
+        private readonly GridWrapper _wrapper = new GridWrapper();
+
+        public void AddColumn(string width)
+        {
+            _wrapper.AddColumn(width);
+            StateHasChanged();
+        }
+
+        public void AddRow(string height)
+        {
+            _wrapper.AddRow(height);
+            StateHasChanged();
+        }
+    }

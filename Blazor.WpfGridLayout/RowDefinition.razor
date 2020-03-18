@@ -1,0 +1,16 @@
+﻿@code {
+
+    [CascadingParameter]
+    private Grid Parent { get; set; }
+
+    [Parameter]
+    public string Height { get; set; } = "*";
+    
+    protected override void OnInitialized()
+    {
+        if(Parent == null)
+            throw new ArgumentException("Parent not defined. Make sure your component is in a grid element");
+        Parent.AddRow(Height);
+        base.OnInitialized();
+    }
+}
