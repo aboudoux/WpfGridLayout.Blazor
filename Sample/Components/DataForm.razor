@@ -8,35 +8,42 @@
         <RowDefinition Height="auto" />
         <RowDefinition Height="auto" />
         <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
     </RowDefinitions>
     <Content>
         <GridElement Column="1" Row="1" HorizontalAlignment="@Alignment.End" VerticalAlignment="@Alignment.Center">
             <label>Firstname :</label>
         </GridElement>
-        <GridElement Column="1" Row="2" HorizontalAlignment="@Alignment.End"  VerticalAlignment="@Alignment.Center">
+        <GridElement Column="1" Row="2" HorizontalAlignment="@Alignment.End" VerticalAlignment="@Alignment.Center">
             <label>Lastname :</label>
         </GridElement>
-        <GridElement Column="1" Row="3" HorizontalAlignment="@Alignment.End"  VerticalAlignment="@Alignment.Center">
+        <GridElement Column="1" Row="3" HorizontalAlignment="@Alignment.End" VerticalAlignment="@Alignment.Center">
             <label>Gender:</label>
         </GridElement>
-        <GridElement Column="1" Row="4" HorizontalAlignment="@Alignment.End"  VerticalAlignment="@Alignment.Center">
+        <GridElement Column="1" Row="4" HorizontalAlignment="@Alignment.End" VerticalAlignment="@Alignment.Center">
             <label>Birthdate:</label>
         </GridElement>
+        <GridElement Column="1" Row="5" HorizontalAlignment="@Alignment.End" VerticalAlignment="@Alignment.Center">
+            <label>Password:</label>
+        </GridElement>
 
-        <GridElement Column="2" Row="1" HorizontalAlignment="@Alignment.Start"  VerticalAlignment="@Alignment.Center">
+        <GridElement Column="2" Row="1" HorizontalAlignment="@Alignment.Start" VerticalAlignment="@Alignment.Center">
             <input type="text" />
         </GridElement>
-        <GridElement Column="2" Row="2" HorizontalAlignment="@Alignment.Stretch"  VerticalAlignment="@Alignment.Center">
+        <GridElement Column="2" Row="2" HorizontalAlignment="@Alignment.Stretch" VerticalAlignment="@Alignment.Center">
             <input type="text" />
         </GridElement>
-        <GridElement Column="2" Row="3" HorizontalAlignment="@Alignment.Start"  VerticalAlignment="@Alignment.Center">
+        <GridElement Column="2" Row="3" HorizontalAlignment="@Alignment.Start" VerticalAlignment="@Alignment.Center">
             <select>
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select>
         </GridElement>
-        <GridElement Column="2" Row="4" HorizontalAlignment="@Alignment.Start"  VerticalAlignment="@Alignment.Center">
-            <input type="date"/>
+        <GridElement Column="2" Row="4" HorizontalAlignment="@Alignment.Start" VerticalAlignment="@Alignment.Center">
+            <input type="date" />
+        </GridElement>
+        <GridElement Column="2" Row="5" HorizontalAlignment="@Alignment.Start" VerticalAlignment="@Alignment.Center">
+            <Password />
         </GridElement>
     </Content>
 </Grid>

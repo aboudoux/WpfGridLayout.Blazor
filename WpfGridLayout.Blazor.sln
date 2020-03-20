@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{42872760-A0AF-4E8B-84EE-899E3233E4F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.WpfGridLayout", "Blazor.WpfGridLayout\Blazor.WpfGridLayout.csproj", "{D41ED6A8-D00B-494C-B957-DD4B5F44F0C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfGridLayout.Blazor", "WpfGridLayout.Blazor\WpfGridLayout.Blazor.csproj", "{D41ED6A8-D00B-494C-B957-DD4B5F44F0C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.WpfGridLayout.Tests", "Blazor.WpfGridLayout.Tests\Blazor.WpfGridLayout.Tests.csproj", "{4F21950D-91D9-4DC4-8F80-F2BCFD9D332F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfGridLayout.Blazor.Tests", "WpfGridLayout.Blazor.Tests\WpfGridLayout.Blazor.Tests.csproj", "{4F21950D-91D9-4DC4-8F80-F2BCFD9D332F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

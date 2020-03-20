@@ -1,0 +1,75 @@
+﻿@using System.Collections
+<Grid ColumnGap="3" RowGap="10">
+    <ColumnDefinitions>
+        @foreach (var col in _bars) {
+            <ColumnDefinition Width="*" MaxWidth="200" />
+        }
+    </ColumnDefinitions>
+    <RowDefinitions>
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="20" />
+    </RowDefinitions>
+    <Content>
+        
+        @foreach (var bar in _bars)
+        {
+            @Bar(bar.colNumber, bar.value, bar.color);
+        }
+
+        <GridElement Row="2" ColumnSpan="@_bars.Count()">
+            <button @onclick="AddBar">Add bar</button>
+        </GridElement>
+    </Content>
+</Grid>
+
+
+@code {
+
+    private BarList _bars;
+
+    protected override void OnInitialized()
+    {
+        _bars = new BarList((RandomValue(), RandomColor()),(RandomValue(),RandomColor()));
+        base.OnInitialized();
+    }
+
+    private void AddBar()
+    {
+        _bars.Add(RandomValue(), RandomColor());
+    }
+
+    public RenderFragment Bar(int column, int value, string color)
+        => @<GridElement Column="@column" Row="1" VerticalAlignment="@Alignment.End">
+               <div style="background-color: @color; height: @(value + "px");"></div>
+           </GridElement>;
+
+
+    private static readonly Random Random = new Random((int)DateTime.Now.Ticks);
+
+
+    private int RandomValue() => Random.Next(10, 100);
+    private string RandomColor()
+    {
+        var colorBytes = new byte[3];
+        Random.NextBytes(colorBytes);
+        return colorBytes.Aggregate("#", (seed, next) => seed + next.ToString("X2"));
+    }
+
+    public class BarList : IEnumerable<(int colNumber, int value, string color)>
+    {
+        private readonly List<(int value, string color)> _barValues = new List<(int, string)>();
+
+        public BarList(params (int value, string color)[] values) => _barValues.AddRange(values);
+
+        public IEnumerator<(int colNumber, int value, string color)> GetEnumerator()
+        {
+            var col = 1;
+            foreach (var barValue in _barValues)
+                yield return (col++, barValue.value, barValue.color);
+        }
+
+        public void Add(int value, string color) => _barValues.Add((value, color));
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+}
