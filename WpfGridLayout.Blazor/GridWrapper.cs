@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace Blazor.WpfGridLayout
+namespace WpfGridLayout.Blazor
 {
 	public class GridWrapper
 	{
@@ -17,9 +17,9 @@ namespace Blazor.WpfGridLayout
 			? $"grid-template-rows: {string.Join(" ", _rows)};"
 			: string.Empty;
 
-		public void AddColumn(string width) => _columns.AddData(width);
+		public void AddColumn(string width, string min = null, string max = null) => _columns.AddData(width, min, max);
 
-		public void AddRow(string height) => _rows.AddData(height);
+		public void AddRow(string height, string min = null, string max = null) => _rows.AddData(height, min, max);
 
 		public string RowGap(int gap) => gap > 0 ? $"grid-row-gap: {gap}px;" : string.Empty;
 		public string ColumnGap(int gap) => gap > 0 ? $"grid-column-gap: {gap}px;" : string.Empty;

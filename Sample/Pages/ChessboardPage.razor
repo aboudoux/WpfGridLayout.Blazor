@@ -1,0 +1,49 @@
+﻿@page "/chessboardpage"
+
+<Grid>
+    <ColumnDefinitions>
+            @for (var a = 1; a <= 8; a++) {
+                <ColumnDefinition Width="50"/>
+            }
+
+    </ColumnDefinitions>
+    <RowDefinitions>
+        @for (var b = 1; b <= 8; b++) {
+            <RowDefinition Height="50" />
+        }
+    </RowDefinitions>
+    <Content>
+
+        @for (var rowIndex = 1; rowIndex <= 8; rowIndex++) {
+            var row = rowIndex;
+            @for (var colIndex = 1; colIndex <= 8; colIndex++) {
+                var col = colIndex;
+                <GridElement Row="@row" Column="@col">
+                    <div class="@CellColor(row, col)"></div>
+                </GridElement>
+            }
+        }
+
+    </Content>
+</Grid>
+
+@code {
+
+    string _firstColor = "white";
+    string _secondColor = "black";
+
+    private string CellColor(int rowIndex, int colIndex) => (colIndex % 2 == 0)
+        ? (rowIndex % 2 == 0) ? _firstColor : _secondColor
+        : (rowIndex % 2 == 0) ? _secondColor : _firstColor;
+
+}
+
+<style>
+    .black {
+        background-color: brown
+    }
+
+    .white {
+        background-color: bisque
+    }
+</style>

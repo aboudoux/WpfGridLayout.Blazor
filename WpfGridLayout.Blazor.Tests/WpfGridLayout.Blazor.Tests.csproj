@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor.WpfGridLayout\Blazor.WpfGridLayout.csproj" />
+    <ProjectReference Include="..\WpfGridLayout.Blazor\WpfGridLayout.Blazor.csproj" />
   </ItemGroup>
 
 </Project>

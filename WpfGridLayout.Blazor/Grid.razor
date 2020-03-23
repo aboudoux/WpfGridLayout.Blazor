@@ -25,15 +25,15 @@
 
         private readonly GridWrapper _wrapper = new GridWrapper();
 
-        public void AddColumn(string width)
+        public void AddColumn(string width, string min, string max)
         {
-            _wrapper.AddColumn(width);
+            _wrapper.AddColumn(width, min, max);
             StateHasChanged();
         }
 
-        public void AddRow(string height)
+        public void AddRow(string height,string min, string max)
         {
-            _wrapper.AddRow(height);
+            _wrapper.AddRow(height, min, max);
             StateHasChanged();
         }
     }

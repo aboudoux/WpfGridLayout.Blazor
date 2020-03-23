@@ -1,0 +1,47 @@
+﻿@page "/overlappage"
+
+<Grid>
+    <ColumnDefinitions>
+        <ColumnDefinition Width="200"/>
+        <ColumnDefinition Width="200"/>
+        <ColumnDefinition Width="200"/>
+    </ColumnDefinitions>
+    <RowDefinitions>
+        <RowDefinition Height="200" />
+        <RowDefinition Height="200" />
+        <RowDefinition Height="200" />
+    </RowDefinitions>
+    
+    <Content>
+        <GridElement Row="1" RowSpan="2">
+            <div class="first" />
+        </GridElement>
+
+        <GridElement Row="2" ColumnSpan="3">
+            <div class="second" />
+        </GridElement>
+        <GridElement Row="2" Column="3" RowSpan="3">
+            <div class="third" />
+        </GridElement>
+    </Content>
+</Grid>
+
+<style>
+    .first {
+        border: solid red;
+        background-color: coral;
+        opacity: 0.5;
+    }
+
+    .second {
+        border: solid green;
+        background-color: greenyellow;
+        opacity: 0.5;
+    }
+    .third {
+        border: solid blue;
+        background-color: aqua;
+        opacity: 0.5;
+    }
+</style>
+

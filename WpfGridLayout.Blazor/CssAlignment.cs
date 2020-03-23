@@ -1,4 +1,4 @@
-namespace Blazor.WpfGridLayout
+namespace WpfGridLayout.Blazor
 {
 	public class CssAlignment
 	{
