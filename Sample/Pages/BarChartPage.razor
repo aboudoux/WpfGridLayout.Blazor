@@ -1,8 +1,29 @@
 ﻿@page "/passwordpage"
-<h3>PasswordPage</h3>
+<Grid>
+    <ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+    </ColumnDefinitions>
+    <Content>
+        <GridElement Column="1">
+            <NesCommand ButtonClicked="@Output" />
+        </GridElement>
+        <GridElement Column="2">
+            <textarea>
+                @foreach (var o in _outputs)
+                {
+                    @(o+"\r\n");
+                }
+            </textarea>
+        </GridElement>
+    </Content>
+</Grid>
 
-<Password />
+
+
 
 @code {
+    private List<string> _outputs = new List<string>();
 
+    private void Output(string data) => _outputs.Insert(0, data);
 }

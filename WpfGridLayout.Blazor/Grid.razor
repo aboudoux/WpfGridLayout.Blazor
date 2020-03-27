@@ -7,33 +7,49 @@
     </div>
 </CascadingValue>
 
-    @code {
-        [Parameter]
-        public RenderFragment ColumnDefinitions { get; set; }
+@code {
+    [Parameter]
+    public RenderFragment ColumnDefinitions { get; set; }
 
-        [Parameter]
-        public RenderFragment RowDefinitions { get; set; }
+    [Parameter]
+    public RenderFragment RowDefinitions { get; set; }
 
-        [Parameter]
-        public RenderFragment Content { get; set; }
+    [Parameter]
+    public RenderFragment Content { get; set; }
 
-        [Parameter]
-        public int ColumnGap { get; set; } = 0;
+    [Parameter]
+    public double ColumnGap { get; set; } = 0;
 
-        [Parameter]
-        public int RowGap { get; set; } = 0;
+    [Parameter]
+    public double RowGap { get; set; } = 0;
 
-        private readonly GridWrapper _wrapper = new GridWrapper();
+    [Parameter]
+    public double? Width { get; set; }
 
-        public void AddColumn(string width, string min, string max)
-        {
-            _wrapper.AddColumn(width, min, max);
-            StateHasChanged();
-        }
+    [Parameter]
+    public double? Height { get; set; }
 
-        public void AddRow(string height,string min, string max)
-        {
-            _wrapper.AddRow(height, min, max);
-            StateHasChanged();
-        }
+    private readonly GridWrapper _wrapper = new GridWrapper();
+
+    public void AddColumn(string width, string min, string max)
+    {
+        _wrapper.AddColumn(width, min, max);
+        StateHasChanged();
     }
+
+    public void AddRow(string height,string min, string max)
+    {
+        _wrapper.AddRow(height, min, max);
+        StateHasChanged();
+    }
+
+    private int _zindex = 1;
+    public int NextZIndex() => _zindex++;
+
+    protected override void OnParametersSet()
+    {
+        _wrapper.SetWidth(Width);
+        _wrapper.SetHeight(Height);
+        base.OnParametersSet();
+    }
+}
