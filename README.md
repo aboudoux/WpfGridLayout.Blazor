@@ -91,14 +91,14 @@ This tag can contains extra attributes :
 
 | Attribute name  | Description| Value| Default Value |
 |--|--|--|--|
-| Width | Specify a fixed width for the grid | empty
-| Height | Specify a fixed height for the grid | empty
+| Width | Specify a fixed width for the grid | a number representing the size in px | empty
+| Height | Specify a fixed height for the grid | a number representing the size in px | empty
 | ColumnGap  | Specify the width of the gap separating the **columns** | a number representing the size in px | empty
 | RowGap  | Specify the width of the gap separating the **rows** | a number representing the size in px | empty
 
 *Example*
 ```
-<Grid ColumnGap="10" RowGap="20">
+<Grid ColumnGap="10" RowGap="20" Width="200" Height="100">
 ...
 </Grid>
 ```
