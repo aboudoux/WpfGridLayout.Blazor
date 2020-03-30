@@ -1,0 +1,63 @@
+﻿<Grid Width="300" Height="133.6">
+    <ColumnDefinitions>
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="2*" />
+    </ColumnDefinitions>
+    <RowDefinitions>
+        <RowDefinition Height="2*" />
+        <RowDefinition Height="2*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="2*" />
+    </RowDefinitions>
+    <Content>
+        <GridElement RowSpan="5" ColumnSpan="4">
+            <img src="images/LD0004616421_2.jpg" style="width: 300px;" />
+        </GridElement>
+        <GridElement Column="3" Row="3" ColumnSpan="4" RowSpan="3">@ClickableZone("Up")</GridElement>
+        <GridElement Column="3" Row="6" ColumnSpan="4" RowSpan="6">@ClickableZone("Down")</GridElement>
+        <GridElement Column="2" Row="4" ColumnSpan="2" RowSpan="5">@ClickableZone("Left")</GridElement>
+        <GridElement Column="5" Row="4" ColumnSpan="5" RowSpan="5">@ClickableZone("Right")</GridElement>
+        <GridElement Column="12" Row="3" ColumnSpan="12" RowSpan="4">@ClickableZone("A")</GridElement>
+        <GridElement Column="11" Row="5" ColumnSpan="11" RowSpan="6">@ClickableZone("B")</GridElement>
+        <GridElement Column="11" Row="2">@ClickableZone("X")</GridElement>
+        <GridElement Column="10" Row="3" ColumnSpan="10" RowSpan="4">@ClickableZone("Y")</GridElement>
+    </Content>
+</Grid>
+
+
+@code {
+
+    [Parameter]
+    public EventCallback<string> ButtonClicked { get; set; }
+
+    public void Clicked(string name) => ButtonClicked.InvokeAsync(name);
+
+    private RenderFragment ClickableZone(string name)
+        => @<a class="clickable" @onclick="(() => Clicked(name))"></a>;
+}
+
+<style>
+    .clickable:hover {
+        cursor: pointer;
+        background: #bbc3cc96;
+    }
+
+    .clickable:active {
+        background: #bbffff96;
+    }
+    
+</style>

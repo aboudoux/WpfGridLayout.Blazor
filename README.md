@@ -91,6 +91,8 @@ This tag can contains extra attributes :
 
 | Attribute name  | Description| Value| Default Value |
 |--|--|--|--|
+| Width | Specify a fixed width for the grid | empty
+| Height | Specify a fixed height for the grid | empty
 | ColumnGap  | Specify the width of the gap separating the **columns** | a number representing the size in px | empty
 | RowGap  | Specify the width of the gap separating the **rows** | a number representing the size in px | empty
 
@@ -237,6 +239,15 @@ Here's are the values used by ```HorizontalAlignment``` and ```VerticalAlignment
 WpfGridLayout.Blazor is created by [Aurelien BOUDOUX](http://aurelien.boudoux.fr).
 
 Contributions are welcome!
+
+## Change log
+
+### 1.1.0 
+- [New] Add Width & Height attributes to the Grid element
+- [Bugfix] Error in stack order of elements
+
+### 1.0.0
+- First release of the component
 
 ## License
 WpfGridLayout.Blazor is MIT licensed.

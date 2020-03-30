@@ -8,4 +8,8 @@
     <ProjectReference Include="..\WpfGridLayout.Blazor\WpfGridLayout.Blazor.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>

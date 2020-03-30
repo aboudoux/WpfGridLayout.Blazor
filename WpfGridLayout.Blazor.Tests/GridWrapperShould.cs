@@ -119,9 +119,31 @@ namespace WpfGridLayout.Blazor.Tests {
 		[InlineData("test", null, null)]
 		[InlineData(null, "test", null)]
 		[InlineData(null, null, "test")]
-		public void ThrowErrorIfAddRowWithBadUint(string height, string min, string max) {
+		public void ThrowErrorIfAddRowWithBadUint(string height, string min, string max) 
+		{
 			var wrapper = new GridWrapper();
 			FluentActions.Invoking(() => wrapper.AddRow(height, min, max)).Should().Throw<GridLayoutException>();
+		}
+
+		[Theory]
+		[InlineData(null, "display: grid;")]
+		[InlineData(20, "display: grid; width:20px;")]
+		[InlineData(133.7, "display: grid; width:133.7px;")]
+		public void AddGridWidth(double? value, string expected)
+		{
+			var wrapper = new GridWrapper();
+			wrapper.SetWidth(value);
+			wrapper.Css.Should().Be(expected);
+		}
+
+		[Theory]
+		[InlineData(null, "display: grid;")]
+		[InlineData(20, "display: grid; height:20px;")]
+		[InlineData(133.7, "display: grid; height:133.7px;")]
+		public void AddGridHeight(double? value, string expected) {
+			var wrapper = new GridWrapper();
+			wrapper.SetHeight(value);
+			wrapper.Css.Should().Be(expected);
 		}
 	}
 }
