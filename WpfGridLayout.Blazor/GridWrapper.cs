@@ -21,8 +21,8 @@ namespace WpfGridLayout.Blazor
 			? $"grid-template-rows: {string.Join(" ", _rows)};"
 			: string.Empty;
 
-		private string Width() => $"{(_width.HasValue ? "width:" + _width.Value.ToString(_enCulture) + "px;" : string.Empty)}";
-		private string Height() => $"{(_height.HasValue ? "height:"+ _height.Value.ToString(_enCulture) + "px;" : string.Empty)}";
+		private string Width() => $"width: {(_width.HasValue ? _width.Value.ToString(_enCulture) + "px;" : "100%;")} ";
+		private string Height() => $"height: {(_height.HasValue ? _height.Value.ToString(_enCulture) + "px;" : "100%;")} ";
 
 		public void AddColumn(string width, string min = null, string max = null) => _columns.AddData(width, min, max);
 

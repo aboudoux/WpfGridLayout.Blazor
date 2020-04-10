@@ -91,8 +91,8 @@ This tag can contains extra attributes :
 
 | Attribute name  | Description| Value| Default Value |
 |--|--|--|--|
-| Width | Specify a fixed width for the grid | a number representing the size in px | empty
-| Height | Specify a fixed height for the grid | a number representing the size in px | empty
+| Width | Specify a fixed width for the grid | a number representing the size in px | 100% of its container
+| Height | Specify a fixed height for the grid | a number representing the size in px | 100% of its container
 | ColumnGap  | Specify the width of the gap separating the **columns** | a number representing the size in px | empty
 | RowGap  | Specify the width of the gap separating the **rows** | a number representing the size in px | empty
 
@@ -241,6 +241,9 @@ WpfGridLayout.Blazor is created by [Aurelien BOUDOUX](http://aurelien.boudoux.fr
 Contributions are welcome!
 
 ## Change log
+
+### 1.2.0 
+- [Improvement] The grid completely fills the size of its container by default
 
 ### 1.1.0 
 - [New] Add Width & Height attributes to the Grid element

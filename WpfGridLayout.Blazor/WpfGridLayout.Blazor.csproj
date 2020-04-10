@@ -13,9 +13,8 @@
     <PackageIcon>art-and-design.png</PackageIcon>
     <PackageId>WpfGridLayout.Blazor</PackageId>
     <Product>WpfGridLayout.Blazor</Product>
-    <Version>1.1.0</Version>
-    <PackageReleaseNotes>- [New] Add Width &amp; Height attributes to the Grid element
-- [Bugfix] Error in stack order of elements</PackageReleaseNotes>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>- [Improvement] The grid completely fills the size of its container by default</PackageReleaseNotes>
   </PropertyGroup>
 
 

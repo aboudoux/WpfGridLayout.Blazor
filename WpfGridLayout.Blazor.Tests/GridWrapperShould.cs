@@ -9,13 +9,13 @@ namespace WpfGridLayout.Blazor.Tests {
 		{
 			public GenerateColumnsTemplatesData()
 			{
-				Add(new List<string> {"*"}, "display: grid; grid-template-columns: 1fr;");
-				Add(new List<string> {"1*", "2*"}, "display: grid; grid-template-columns: 1fr 2fr;");
-				Add(new List<string> {"1*", "12*"}, "display: grid; grid-template-columns: 1fr 12fr;");
-				Add(new List<string> {"1*", "25"}, "display: grid; grid-template-columns: 1fr 25px;");
-				Add(new List<string> {"auto"}, "display: grid; grid-template-columns: auto;");
-				Add(new List<string> {""}, "display: grid; grid-template-columns: 1fr;");
-				Add(new List<string> {"", "*", "2*", "35", "Auto"}, "display: grid; grid-template-columns: 1fr 1fr 2fr 35px auto;");
+				Add(new List<string> {"*"}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr;");
+				Add(new List<string> {"1*", "2*"}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr 2fr;");
+				Add(new List<string> {"1*", "12*"}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr 12fr;");
+				Add(new List<string> {"1*", "25"}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr 25px;");
+				Add(new List<string> {"auto"}, "display: grid; width: 100%; height: 100%; grid-template-columns: auto;");
+				Add(new List<string> {""}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr;");
+				Add(new List<string> {"", "*", "2*", "35", "Auto"}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr 1fr 2fr 35px auto;");
 			}
 		}
 
@@ -30,12 +30,12 @@ namespace WpfGridLayout.Blazor.Tests {
 
 		private class GenerateColumnsTemplateWithMinAndMaxData : TheoryData<List<(string width, string min, string max)>, string> {
 			public GenerateColumnsTemplateWithMinAndMaxData() {
-				Add(new List<(string width, string min, string max)> {("auto","25","")}, "display: grid; grid-template-columns: minmax(25px,1fr);");
-				Add(new List<(string width, string min, string max)> {("*","25","")}, "display: grid; grid-template-columns: minmax(25px,1fr);");
-				Add(new List<(string width, string min, string max)> {("*","","30")}, "display: grid; grid-template-columns: minmax(1px,30px);");
-				Add(new List<(string width, string min, string max)> {("*","","2*")}, "display: grid; grid-template-columns: minmax(1px,2fr);");
-				Add(new List<(string width, string min, string max)> {("*","1",null), ("50", "", "100") }, "display: grid; grid-template-columns: minmax(1px,1fr) minmax(1px,100px);");
-				Add(new List<(string width, string min, string max)> {("*",null,null), ("50", "", "100") }, "display: grid; grid-template-columns: 1fr minmax(1px,100px);");
+				Add(new List<(string width, string min, string max)> {("auto","25","")}, "display: grid; width: 100%; height: 100%; grid-template-columns: minmax(25px,1fr);");
+				Add(new List<(string width, string min, string max)> {("*","25","")}, "display: grid; width: 100%; height: 100%; grid-template-columns: minmax(25px,1fr);");
+				Add(new List<(string width, string min, string max)> {("*","","30")}, "display: grid; width: 100%; height: 100%; grid-template-columns: minmax(1px,30px);");
+				Add(new List<(string width, string min, string max)> {("*","","2*")}, "display: grid; width: 100%; height: 100%; grid-template-columns: minmax(1px,2fr);");
+				Add(new List<(string width, string min, string max)> {("*","1",null), ("50", "", "100") }, "display: grid; width: 100%; height: 100%; grid-template-columns: minmax(1px,1fr) minmax(1px,100px);");
+				Add(new List<(string width, string min, string max)> {("*",null,null), ("50", "", "100") }, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr minmax(1px,100px);");
 			}
 		}
 		[Theory]
@@ -50,13 +50,13 @@ namespace WpfGridLayout.Blazor.Tests {
 		private class GenerateRowsTemplatesData: TheoryData<List<string>, string> {
 			public GenerateRowsTemplatesData()
 			{
-				Add(new List<string> { "*" }, "display: grid; grid-template-rows: 1fr;");
-				Add(new List<string> { "1*", "2*" }, "display: grid; grid-template-rows: 1fr 2fr;");
-				Add(new List<string> { "1*", "12*" }, "display: grid; grid-template-rows: 1fr 12fr;");
-				Add(new List<string> { "1*", "25" }, "display: grid; grid-template-rows: 1fr 25px;");
-				Add(new List<string> { "auto" }, "display: grid; grid-template-rows: auto;");
-				Add(new List<string> { "" }, "display: grid; grid-template-rows: 1fr;");
-				Add(new List<string> { "", "*", "2*", "35", "Auto" }, "display: grid; grid-template-rows: 1fr 1fr 2fr 35px auto;");
+				Add(new List<string> { "*" }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr;");
+				Add(new List<string> { "1*", "2*" }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr 2fr;");
+				Add(new List<string> { "1*", "12*" }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr 12fr;");
+				Add(new List<string> { "1*", "25" }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr 25px;");
+				Add(new List<string> { "auto" }, "display: grid; width: 100%; height: 100%; grid-template-rows: auto;");
+				Add(new List<string> { "" }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr;");
+				Add(new List<string> { "", "*", "2*", "35", "Auto" }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr 1fr 2fr 35px auto;");
 			}
 		}
 
@@ -72,19 +72,19 @@ namespace WpfGridLayout.Blazor.Tests {
 		public class CombineRowsAndColumnsTemplateData : TheoryData<List<string>, List<string>, string> {
 			public CombineRowsAndColumnsTemplateData()
 			{
-				Add(new List<string>(){"*"}, new List<string>(){"*"}, "display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr;");
-				Add(new List<string>(){"*", "20", "auto", "2*"}, new List<string>(){ "*", "20", "auto", "2*" }, "display: grid; grid-template-columns: 1fr 20px auto 2fr; grid-template-rows: 1fr 20px auto 2fr;");
+				Add(new List<string>(){"*"}, new List<string>(){"*"}, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr; grid-template-rows: 1fr;");
+				Add(new List<string>(){"*", "20", "auto", "2*"}, new List<string>(){ "*", "20", "auto", "2*" }, "display: grid; width: 100%; height: 100%; grid-template-columns: 1fr 20px auto 2fr; grid-template-rows: 1fr 20px auto 2fr;");
 			}
 		}
 
 		private class GenerateRowsTemplateWithMinAndMaxData : TheoryData<List<(string width, string min, string max)>, string> {
 			public GenerateRowsTemplateWithMinAndMaxData() {
-				Add(new List<(string width, string min, string max)> { ("auto", "25", "") }, "display: grid; grid-template-rows: minmax(25px,1fr);");
-				Add(new List<(string width, string min, string max)> { ("*", "25", "") }, "display: grid; grid-template-rows: minmax(25px,1fr);");
-				Add(new List<(string width, string min, string max)> { ("*", "", "30") }, "display: grid; grid-template-rows: minmax(1px,30px);");
-				Add(new List<(string width, string min, string max)> { ("*", "", "2*") }, "display: grid; grid-template-rows: minmax(1px,2fr);");
-				Add(new List<(string width, string min, string max)> { ("*", "1", null), ("50", "", "100") }, "display: grid; grid-template-rows: minmax(1px,1fr) minmax(1px,100px);");
-				Add(new List<(string width, string min, string max)> { ("*", null, null), ("50", "", "100") }, "display: grid; grid-template-rows: 1fr minmax(1px,100px);");
+				Add(new List<(string width, string min, string max)> { ("auto", "25", "") }, "display: grid; width: 100%; height: 100%; grid-template-rows: minmax(25px,1fr);");
+				Add(new List<(string width, string min, string max)> { ("*", "25", "") }, "display: grid; width: 100%; height: 100%; grid-template-rows: minmax(25px,1fr);");
+				Add(new List<(string width, string min, string max)> { ("*", "", "30") }, "display: grid; width: 100%; height: 100%; grid-template-rows: minmax(1px,30px);");
+				Add(new List<(string width, string min, string max)> { ("*", "", "2*") }, "display: grid; width: 100%; height: 100%; grid-template-rows: minmax(1px,2fr);");
+				Add(new List<(string width, string min, string max)> { ("*", "1", null), ("50", "", "100") }, "display: grid; width: 100%; height: 100%; grid-template-rows: minmax(1px,1fr) minmax(1px,100px);");
+				Add(new List<(string width, string min, string max)> { ("*", null, null), ("50", "", "100") }, "display: grid; width: 100%; height: 100%; grid-template-rows: 1fr minmax(1px,100px);");
 			}
 		}
 		[Theory]
@@ -126,9 +126,9 @@ namespace WpfGridLayout.Blazor.Tests {
 		}
 
 		[Theory]
-		[InlineData(null, "display: grid;")]
-		[InlineData(20, "display: grid; width:20px;")]
-		[InlineData(133.7, "display: grid; width:133.7px;")]
+		[InlineData(null, "display: grid; width: 100%; height: 100%;")]
+		[InlineData(20, "display: grid; width: 20px; height: 100%;")]
+		[InlineData(133.7, "display: grid; width: 133.7px; height: 100%;")]
 		public void AddGridWidth(double? value, string expected)
 		{
 			var wrapper = new GridWrapper();
@@ -137,9 +137,9 @@ namespace WpfGridLayout.Blazor.Tests {
 		}
 
 		[Theory]
-		[InlineData(null, "display: grid;")]
-		[InlineData(20, "display: grid; height:20px;")]
-		[InlineData(133.7, "display: grid; height:133.7px;")]
+		[InlineData(null, "display: grid; width: 100%; height: 100%;")]
+		[InlineData(20, "display: grid; width: 100%; height: 20px;")]
+		[InlineData(133.7, "display: grid; width: 100%; height: 133.7px;")]
 		public void AddGridHeight(double? value, string expected) {
 			var wrapper = new GridWrapper();
 			wrapper.SetHeight(value);
