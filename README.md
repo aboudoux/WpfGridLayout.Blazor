@@ -240,6 +240,10 @@ WpfGridLayout.Blazor is created by [Aurelien BOUDOUX](http://aurelien.boudoux.fr
 
 Contributions are welcome!
 
+## Want to see a real project based on WpfGridLayout.Blazor ?
+
+Take a look at the [main component](https://github.com/aboudoux/TetrisBlazor/blob/master/Tetris.Blazor/Tetris.razor) of [TetrisBlazor project](https://github.com/aboudoux/TetrisBlazor) to see WpfGridLayout.Blazor in action !
+
 ## Change log
 
 ### 1.2.0 
